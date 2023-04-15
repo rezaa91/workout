@@ -3,6 +3,7 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '@shared/(.*)': '<rootDir>/src/shared-kernel/$1'
+    '@shared/(.*)': '<rootDir>/src/shared/$1',
+    '@workout/(.*)': '<rootDir>/src/workout/$1'
   }
 };

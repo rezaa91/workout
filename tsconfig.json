@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "lib": ["ES2022"],
-    "module": "ES2022",
+    "esModuleInterop": true,
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "target": "ES2022",
+    "target": "es5",
     "outDir": "dist",
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@shared/*": ["shared-kernel/*"]
+      "@shared/*": ["shared/*"],
+      "@workout/*": ["workout/*"]
     }
   },
   "include": ["src"],

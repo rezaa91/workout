@@ -1,4 +1,4 @@
-import {AggregateRoot} from '@shared/aggregate';
+import {AggregateRoot} from '@shared/kernel/aggregate';
 import {Exercise} from './exercise.entity';
 
 export class Workout extends AggregateRoot {

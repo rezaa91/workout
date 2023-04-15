@@ -1,4 +1,4 @@
-import {BaseEntity} from '@shared/entity';
+import {BaseEntity} from '@shared/kernel/entity';
 import {Set} from '../value-objects/set-vo';
 
 export class Exercise extends BaseEntity {
