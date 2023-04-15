@@ -1,7 +1,12 @@
 import {WorkoutError} from '@shared/core/workout.error';
-import {Request, Response} from 'express';
+import {NextFunction, Request, Response} from 'express';
 
-export function errorHandler(error: Error, _req: Request, res: Response) {
+export function errorHandler(error: Error, _req: Request, res: Response, _next: NextFunction) {
+  if (Array.isArray(error)) {
+    // handle class-validator errors
+    return res.status(400).json(error);
+  }
+
   if (error instanceof WorkoutError) {
     return res.status(error.statusCode).json({
       error: error.message,

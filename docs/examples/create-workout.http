@@ -1,0 +1,37 @@
+POST https://localhost:3000/workout HTTP/1.1
+content-type: application/json
+
+{
+  "exercises": [
+    {
+      "name": "bench press",
+      "sets": [
+        {
+          "weight": 80,
+          "repetitions": 8
+        },
+        {
+          "weight": 80,
+          "repetitions": 8
+        },
+        {
+          "weight": 90,
+          "repetitions": 6
+        }
+      ]
+    },
+    {
+      "name": "military press",
+      "sets": [
+        {
+          "weight": 40,
+          "repetitions": 20
+        },
+        {
+          "weight": 40,
+          "repetitions": 20
+        }
+      ]
+    }
+  ]
+}
