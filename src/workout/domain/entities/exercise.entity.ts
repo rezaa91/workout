@@ -23,6 +23,6 @@ export class Exercise extends BaseEntity {
   public listSets(): string[] {
     return this.sets.map(set => {
       return `${this.name} ${set.repetitions} repetitions at ${set.weight}`;
-    })
+    });
   }
 }

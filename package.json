@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon src/app/index.ts",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src"
   },
   "author": "Ali Issaee",
   "license": "ISC",
@@ -19,6 +20,9 @@
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.0",
     "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.38.0",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "ts-jest": "^29.1.0",

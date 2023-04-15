@@ -7,5 +7,5 @@ export function getConfig(env: EnvVariables) {
     app: {
       port: Number(env.SERVER_PORT) ?? 3000
     }
-  }
+  };
 }

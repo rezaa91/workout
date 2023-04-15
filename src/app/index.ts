@@ -15,7 +15,7 @@ import {workoutModule} from '@workout/workout.module';
 
   server.use(workoutModule.basePath, workoutModule.router);
 
-  server.use(errorHandler)
+  server.use(errorHandler);
 
   server.listen(config.app.port);
 })();

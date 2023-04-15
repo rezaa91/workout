@@ -1,7 +1,7 @@
 import {WorkoutError} from '@shared/core/workout.error';
-import {NextFunction, Request, Response} from 'express';
+import {Request, Response} from 'express';
 
-export function errorHandler(error: Error, _req: Request, res: Response, _next: NextFunction) {
+export function errorHandler(error: Error, _req: Request, res: Response) {
   if (error instanceof WorkoutError) {
     return res.status(error.statusCode).json({
       error: error.message,
