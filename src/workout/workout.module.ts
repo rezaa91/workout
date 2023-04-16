@@ -3,5 +3,6 @@ import {createRouter} from './infrastructure/router';
 
 export const workoutModule: IModule = {
   basePath: '/workout',
-  router: createRouter()
+  router: createRouter(),
+  subscribers: []
 };

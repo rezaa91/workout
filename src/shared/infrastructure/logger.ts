@@ -1,4 +1,4 @@
-import {ILogger} from "@shared/core/logger";
+import {ILogger} from '@shared/core/logger';
 
 export class Logger implements ILogger {
 

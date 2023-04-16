@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import {validateOrReject} from 'class-validator';
-import asyncHandler from "express-async-handler";
+import asyncHandler from 'express-async-handler';
 import {WorkoutController} from './controllers/workout.controller';
 import {CreateWorkoutService} from '../use-cases/create-workout.service';
 import {WorkoutDto} from '../use-cases/dto/workout.dto';

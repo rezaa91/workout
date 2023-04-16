@@ -14,7 +14,8 @@
   "_moduleAliases": {
     "@root": ".",
     "@shared": "dist/shared",
-    "@workout": "dist/workout"
+    "@workout": "dist/workout",
+    "@analytics": "dist/analytics"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",

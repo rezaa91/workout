@@ -4,19 +4,19 @@ import 'reflect-metadata';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+import '@shared/infrastructure/events/event-listener';
 import {createServer} from './infrastructure/server';
-import {getConfig} from './config';
 import {errorHandler} from '@shared/infrastructure/express/middleware/error-handler';
 import {Logger} from '@shared/infrastructure/logger';
-
-import {workoutModule} from '@workout/workout.module';
+import eventListener from '@shared/infrastructure/events/event-listener';
+import {getConfig} from './config';
+import {loadModules} from './modules';
 
 (async() => {
   const logger = new Logger();
   const config = getConfig(process.env as any);
   const server = createServer();
-
-  server.use(workoutModule.basePath, workoutModule.router);
+  loadModules({server, eventListener});
 
   server.use(errorHandler);
 

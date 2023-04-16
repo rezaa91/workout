@@ -9,5 +9,9 @@ export function createServer(): Express {
   }));
   server.use(express.json());
 
+  server.get('/', (_req, res) => {
+    res.json('Workout!');
+  });
+
   return server;
 }

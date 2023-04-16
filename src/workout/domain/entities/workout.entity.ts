@@ -1,5 +1,6 @@
 import {AggregateRoot} from '@shared/kernel/aggregate';
 import {Exercise} from './exercise.entity';
+import {WorkoutCreated} from '../events/workout-created.event';
 
 export class Workout extends AggregateRoot {
 
@@ -14,6 +15,9 @@ export class Workout extends AggregateRoot {
 
   public addExercise(exercise: Exercise): void {
     this.exercises.push(exercise);
+
+    // TODO testing events
+    this.addEvent(new WorkoutCreated({id: 1}));
   }
 
   public removeExercise(name: string): void {

@@ -1,5 +1,5 @@
 import {IsArray, ValidateNested, IsString, IsNumber} from 'class-validator';
-import {Type} from 'class-transformer'
+import {Type} from 'class-transformer';
 
 class Set {
   @IsNumber()
