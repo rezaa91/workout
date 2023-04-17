@@ -14,7 +14,7 @@ export function createRouter(): Router {
 
     const dto = new WorkoutDto(req.body);
     await validateOrReject(dto);
-    res.json(await controller.createWorkout());
+    res.json(await controller.createWorkout(dto));
   }));
 
   return router;

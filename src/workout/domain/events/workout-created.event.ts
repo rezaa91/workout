@@ -1,7 +1,7 @@
 import {IDomainEvent} from '@shared/kernel/domain.event';
 
 interface WorkoutCreatedPayload {
-  id: number;
+  id: string;
 }
 
 export class WorkoutCreated implements IDomainEvent<WorkoutCreatedPayload> {

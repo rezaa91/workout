@@ -17,7 +17,7 @@ export class Workout extends AggregateRoot {
     this.exercises.push(exercise);
 
     // TODO testing events
-    this.addEvent(new WorkoutCreated({id: 1}));
+    this.addEvent(new WorkoutCreated({id: this.id}));
   }
 
   public removeExercise(name: string): void {

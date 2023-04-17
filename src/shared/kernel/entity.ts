@@ -1,7 +1,7 @@
 import {v4 as uuidv4} from 'uuid';
 
 export abstract class BaseEntity {
-  protected readonly id: string;
+  public readonly id: string;
 
   constructor() {
     this.id = uuidv4();
