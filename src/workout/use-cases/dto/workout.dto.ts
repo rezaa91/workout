@@ -1,6 +1,6 @@
 import {IsArray, ValidateNested} from 'class-validator';
 import {Type} from 'class-transformer';
-import {ExerciseDto} from './exercise.dto'
+import {ExerciseDto} from './exercise.dto';
 
 export class WorkoutDto {
   @IsArray()

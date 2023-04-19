@@ -1,20 +1,20 @@
 import {Router} from 'express';
 import {validateOrReject} from 'class-validator';
 import asyncHandler from 'express-async-handler';
-import {WorkoutController} from './controllers/workout.controller';
-import {CreateWorkoutService} from '../use-cases/create-workout.service';
+import {WorkoutService} from '../use-cases/workout.service';
 import {WorkoutDto} from '../use-cases/dto/workout.dto';
+import {WorkoutRepository} from './repositories/workout.repository';
 
 export function createRouter(): Router {
   const router = Router();
 
-  router.post('/', asyncHandler(async (req, res, next) => {
-    const service = new CreateWorkoutService();
-    const controller = new WorkoutController(service);
+  const workoutRepository = new WorkoutRepository();
+  const workoutService = new WorkoutService(workoutRepository);
 
+  router.post('/', asyncHandler(async (req, res) => {
     const dto = new WorkoutDto(req.body);
     await validateOrReject(dto);
-    res.json(await controller.createWorkout(dto));
+    res.json(await workoutService.createWorkout(dto));
   }));
 
   return router;
