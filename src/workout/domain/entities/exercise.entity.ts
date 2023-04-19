@@ -5,7 +5,7 @@ export class Exercise extends BaseEntity {
 
   public readonly name: string;
 
-  private sets: Set[] = [];
+  public sets: Set[] = [];
 
   constructor(name: string) {
     super();

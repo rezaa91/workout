@@ -4,12 +4,13 @@ import eventListener from '@shared/infrastructure/events/event-listener';
 import {Set} from '../domain/value-objects/set-vo';
 import {WorkoutDto} from './dto/workout.dto';
 import {IWorkoutRepository} from './repositories/workout.repository';
+import {WorkoutMap, WorkoutResponse} from './mappers/workout-map';
 
 export class WorkoutService {
 
   constructor(private readonly repository: IWorkoutRepository) {}
 
-  public async createWorkout(dto: WorkoutDto): Promise<{id: string}> {
+  public async createWorkout(dto: WorkoutDto): Promise<{id: string, exercises: WorkoutResponse[]}> {
     const workout = new Workout();
     dto.exercises.forEach(({name, sets}) => {
       const exercise = new Exercise(name);
@@ -19,6 +20,9 @@ export class WorkoutService {
     await this.repository.saveWorkout(workout);
     eventListener.dispatchEvents(workout);
 
-    return {id: workout.id};
+    return {
+      id: workout.id,
+      exercises: WorkoutMap.toDto(workout)
+    };
   }
 }

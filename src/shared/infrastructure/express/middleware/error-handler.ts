@@ -1,4 +1,4 @@
-import {WorkoutError} from '@shared/core/workout.error';
+import {WorkoutHttpError} from '@shared/core/errors/workout-http.error';
 import {NextFunction, Request, Response} from 'express';
 
 export function errorHandler(error: Error, _req: Request, res: Response, _next: NextFunction) {
@@ -7,7 +7,7 @@ export function errorHandler(error: Error, _req: Request, res: Response, _next: 
     return res.status(400).json(error);
   }
 
-  if (error instanceof WorkoutError) {
+  if (error instanceof WorkoutHttpError) {
     return res.status(error.statusCode).json({
       error: error.message,
       stack: error.stack
